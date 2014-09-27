@@ -1,4 +1,17 @@
-                                ServoBlaster
+#ServoBlaster
+
+
+## Installation
+
+To install the servo blaster driver open a terminal and CD into the directory where you extracted the servoblaster files
+run the command: make install_autostart
+
+You may want to make servoblaster time-out and stop sending signals to the servo after a second if it's not being moved.
+to do this add the following line to /etc/modules: servoblaster idle_timeout=1000
+
+start servoblaster with the following command: sudo modprobe servoblaster
+
+## Explanation
 
 This is software for the RaspberryPi, which provides an interface to drive
 multiple servos via the GPIO pins.   You control the servo positions by sending
