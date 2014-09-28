@@ -71,9 +71,9 @@ if __name__ == '__main__':
     	cv.SetCaptureProperty(capture,cv.CV_CAP_PROP_FRAME_WIDTH,width)
 
     if height is None:
-	height = int(cv.GetCaptureProperty(capture, cv.CV_CAP_PROP_FRAME_HEIGHT))
+		height = int(cv.GetCaptureProperty(capture, cv.CV_CAP_PROP_FRAME_HEIGHT))
     else:
-	cv.SetCaptureProperty(capture,cv.CV_CAP_PROP_FRAME_HEIGHT,height)
+		cv.SetCaptureProperty(capture,cv.CV_CAP_PROP_FRAME_HEIGHT,height)
 
     if capture:
         frame_copy = None
@@ -84,8 +84,7 @@ if __name__ == '__main__':
                 cv.WaitKey(0)
                 break
             if not frame_copy:
-                frame_copy = cv.CreateImage((frame.width,frame.height),
-                                            cv.IPL_DEPTH_8U, frame.nChannels)
+                frame_copy = cv.CreateImage((frame.width,frame.height), cv.IPL_DEPTH_8U, frame.nChannels)
 
             if frame.origin == cv.IPL_ORIGIN_TL:
                 cv.Copy(frame, frame_copy)
