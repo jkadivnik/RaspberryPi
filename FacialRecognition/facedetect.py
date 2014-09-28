@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-The program finds faces in a camera image or video stream and displays a red box around them.
+# The program finds faces in a camera image or video stream and displays a red box around them.
 
 import sys
 import cv2.cv as cv
