@@ -62,8 +62,8 @@ if __name__ == '__main__':
     cv.NamedWindow("video", 1)
 
     #size of the video
-    width = 160
-    height = 120
+    width = 320
+    height = 200
 
     if width is None:
     	width = int(cv.GetCaptureProperty(capture, cv.CV_CAP_PROP_FRAME_WIDTH))
