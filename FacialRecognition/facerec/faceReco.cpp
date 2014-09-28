@@ -24,7 +24,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
-#include "/home/pi/pierre/libfacerec-0.04/include/facerec.hpp"
+#include "/home/pi/bytefish-libfacerec-e1b143d/include/facerec.hpp"
 
 
 #include <iostream>
@@ -36,11 +36,8 @@ using namespace cv;
 using namespace std;
 
 // some constants to manage nb of people to learn+ id of people 
-#define MAX_PEOPLE 		4
+#define MAX_PEOPLE 		1
 #define P_PIERRE		0
-#define P_NATACHA		1
-#define P_LISA			3
-#define P_NELLIE		2
 
 // for debug and trace
 #define TRACE 1
@@ -159,33 +156,10 @@ void saySomething(int nWho)
 			fprintf(f,"bonjour %s.\n",people[nWho].c_str());
 			
 			// depending of people, say what you want. 
-			if (nWho==P_NATACHA)
-			{
-				// fake line : temperature is harcoded. 
-				// but it's easy to do put here, all information get from internet
-				// weather, google calendar API, ... ---> see on step 7 more sophisticated exemple
-				// just get the information here or get it by daemon, write in a file and read the file here.
-				fprintf(f,"Pas la peine de me demander, tu es toujours la plus belle.\n");
-				fprintf(f,"Je te souhaite une excellente fin de journée\n");							
-			}
 			if (nWho==P_PIERRE)
 			{
 				// for exemple, here, say how time is it.
 				fprintf(f,"Il est %d heures et %d minutes.\n",pdh->tm_hour,pdh->tm_min);				
-			}
-			if (nWho==P_NELLIE)
-			{
-				// ah, ah.
-				// if (pdh->tm_hour>8)
-				// fprintf(f,"Don't forget to wash your teeth.\n");
-				
-			}
-			if (nWho==P_LISA)
-			{
-				// ah, ah.
-				// if (pdh->tm_hour>8)
-				// fprintf(f,"Don't forget to wash your teeth.\n");
-				
 			}
 			
 			// close the file
@@ -221,23 +195,10 @@ void saySomething(int nWho)
 		else
 		{
 			// once again....
-			if (nWho==P_NATACHA)
-			{
-				// let's talk to her in english
-				fprintf(f,"May the force be with you.\n");						
-			}
 			if (nWho==P_PIERRE)
 			{
 				// do you want to take a coffee ?
 				fprintf(f,"%s, que dirais tu de prendre un petit café ?.\n",people[nWho].c_str()); 		
-			}
-			if (nWho==P_NELLIE)
-			{
-				// ...
-			}
-			if (nWho==P_LISA)
-			{
-				// ...
 			}
 
 			// close file
@@ -245,7 +206,7 @@ void saySomething(int nWho)
 			
 			// to change... if Pierre, RPI talks in french, if Natacha, RPI talks in english
 			if (nWho==P_PIERRE) system("espeak -f speak.txt -vfr+f5 -s130 2>/dev/null");
-			if (nWho==P_NATACHA) system("espeak -f speak.txt  -s130  2>/dev/null");
+			if (nWho==P_PIERRE) system("espeak -f speak.txt  -s130  2>/dev/null");
 		}
 	}
 	
@@ -306,9 +267,6 @@ int main(int argc, const char *argv[]) {
 	// and they prefer to swimm than to see their father do a config file
 	// life is hard.
 	people[P_PIERRE] 	= "Pierre";
-	people[P_NATACHA] 	= "Natacha";
-	people[P_NELLIE] 	= "Nellie";
-	people[P_LISA]		= "Lisa";
 	
 	// init...
 	// reset counter
@@ -467,7 +425,7 @@ int main(int argc, const char *argv[]) {
         		key = (char) waitKey(10);
         		
 				// say hello to ...
-				saySomething(prediction);
+//				saySomething(prediction);
 				}
 				else
 				{

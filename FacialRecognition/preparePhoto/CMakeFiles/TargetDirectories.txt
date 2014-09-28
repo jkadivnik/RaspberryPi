@@ -1,0 +1,1 @@
+/home/pi/RaspberryPi/FacialRecognition/preparePhoto/CMakeFiles/prepare.dir

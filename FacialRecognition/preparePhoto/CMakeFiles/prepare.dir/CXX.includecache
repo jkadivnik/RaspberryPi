@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/RaspberryPi/FacialRecognition/preparePhoto/preparePhoto.cpp
+opencv2/objdetect/objdetect.hpp
+/home/pi/RaspberryPi/FacialRecognition/preparePhoto/opencv2/objdetect/objdetect.hpp
+opencv2/highgui/highgui.hpp
+/home/pi/RaspberryPi/FacialRecognition/preparePhoto/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/pi/RaspberryPi/FacialRecognition/preparePhoto/opencv2/imgproc/imgproc.hpp
+iostream
+-
+stdio.h
+-
+dirent.h
+-
+
