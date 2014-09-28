@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( reco)
+find_package( OpenCV REQUIRED )
+add_executable( reco faceReco.cpp )
+link_directories( /home/pi/pierre/libfacerec-0.04 )
+target_link_libraries( reco /home/pi/pierre/libfacerec-0.04/libopencv_facerec.a ${OpenCV_LIBS} )
